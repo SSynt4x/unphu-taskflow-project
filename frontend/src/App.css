@@ -1,0 +1,125 @@
+/* TaskFlow Lite - UNPHU Custom Styles */
+
+/* Sidebar styles - Dark green */
+.dark .sidebar {
+    background: linear-gradient(180deg, rgba(10, 26, 10, 0.98) 0%, rgba(5, 20, 5, 0.99) 100%);
+    border-right: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+/* Sidebar styles - Light */
+.sidebar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 253, 244, 0.99) 100%);
+    border-right: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Status badges - Dark mode */
+.dark .status-pending {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+}
+
+.dark .status-completed {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+}
+
+.dark .status-incomplete {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+}
+
+/* Status badges - Light mode */
+.status-pending {
+    @apply bg-yellow-100 text-yellow-700 border border-yellow-300;
+}
+
+.status-completed {
+    @apply bg-emerald-100 text-emerald-700 border border-emerald-300;
+}
+
+.status-incomplete {
+    @apply bg-red-100 text-red-700 border border-red-300;
+}
+
+/* Task card hover effect */
+.task-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+}
+
+.dark .task-card:hover {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+/* Button hover effects - Green neon */
+.btn-primary {
+    @apply bg-emerald-500 text-white font-semibold rounded-full px-6 py-2;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Input focus styles - Green */
+.dark input:focus, .dark textarea:focus {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Rank badge styles */
+.rank-badge {
+    @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+}
+
+/* Page transition */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Calendar custom styles - Green */
+.rdp-day_selected {
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Progress bar - Green gradient */
+.progress-bar {
+    background: linear-gradient(90deg, #10B981, #34D399);
+}
+
+/* Tooltip custom - Green */
+.dark .tooltip-neon {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+/* Selection color */
+::selection {
+    background: rgba(16, 185, 129, 0.3);
+    color: inherit;
+}
+
+/* Link styles */
+a {
+    transition: color 0.2s ease;
+}
+
+.dark a:hover {
+    color: #34D399;
+}
