@@ -1276,11 +1276,15 @@ async def claim_challenge(challenge_id: str, current_user: dict = Depends(get_cu
         "redeemable_earned": challenge["reward_redeemable"]
     }
 
+
+
 # ==================== HEALTH CHECK ====================
 
 @api_router.get("/")
 async def root():
     return {"message": "TaskFlow Lite API", "status": "running"}
+
+app.include_router(api_router)
 
 # Include the router in the main app
 # Cambia esa parte por esta:
