@@ -1284,7 +1284,7 @@ async def claim_challenge(challenge_id: str, current_user: dict = Depends(get_cu
 async def root():
     return {"message": "TaskFlow Lite API", "status": "running"}
 
-app.include_router(api_router)
+
 
 # Include the router in the main app
 # Cambia esa parte por esta:
@@ -1317,3 +1317,5 @@ if __name__ == "__main__":
     # Render asigna un puerto dinámico en la variable de entorno PORT
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("server:app", host="0.0.0.0", port=port, reload=False)
+
+app.include_router(api_router)

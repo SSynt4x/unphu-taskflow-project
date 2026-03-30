@@ -88,6 +88,7 @@ export const AuthProvider = ({ children }) => {
             login, 
             register, 
             logout,
+            sendCode, 
             updateUserPoints,
             isAuthenticated: !!token 
         }}>
@@ -102,4 +103,10 @@ export const useAuth = () => {
         throw new Error('useAuth must be used within an AuthProvider');
     }
     return context;
+};
+
+
+const sendCode = async (email) => {
+    const response = await axios.post(`${API}/auth/send-code`, { email });
+    return response.data;
 };
