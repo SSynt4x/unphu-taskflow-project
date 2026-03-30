@@ -1283,16 +1283,19 @@ async def root():
     return {"message": "TaskFlow Lite API", "status": "running"}
 
 # Include the router in the main app
-app.include_router(api_router)
-
+# Cambia esa parte por esta:
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=[
+        "https://unphu-taskflow-project-1.onrender.com",
+        "https://www.unphu-taskflowlite.me",
+        "https://unphu-taskflowlite.me",
+        "http://localhost:3000",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
