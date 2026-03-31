@@ -288,12 +288,12 @@ async def send_verification_code(data: VerificationRequest):
     
     try:
         params = {
-            "from": SENDER_EMAIL,
+            "from": f"TaskFlow <{SENDER_EMAIL}>",
             "to": [email],
             "subject": f"TaskFlow Lite - Código de verificación: {code}",
             "html": html_content
         }
-        await asyncio.to_thread(resend.Emails.send, params)
+        resend.Emails.send(params)
         return {"message": "Código enviado", "expires_in_minutes": 10}
     except Exception as e:
         logging.error(f"Failed to send email: {str(e)}")
